@@ -5,13 +5,14 @@
     <div class="button-holder">
         <a href="/add"><button class="btn btn-success basic-button">Create a New Contact</button></a>
         <a href="/clear"><button class="btn btn-danger basic-button">Clear Existing Contacts</button></a>
+        <h4>Simple Address Book :)</h3>
     </div>
 </div>
 <div class="row">
     @if (Model.Count == 0)
     {
         <div class="empty-list">
-            <h1>There's nothing in your list</h1>
+            <h1>You have no contacts saved</h1>
         </div>
     }
     else

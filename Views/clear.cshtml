@@ -2,10 +2,18 @@
     Layout="Shared/_Layout.cshtml";
 }
 
-<div class="clear-holder">
+<div class="clear-holder well">
     <h2>Are you sure you want to permanently delete the entire list of contacts?</h2>
-    <form action="/contacts/clear" method="post">
-        <button type="submit" class="btn btn-warning">Yes, delete it all</button>
-    </form>
-    <a href="/"><button class="btn btn-primary">No, take me back</button></a>
+    <div class="row clear-buttons">
+        <div class="col-md-6">
+            <form action="/contacts/clear" method="post">
+                <button type="submit" class="btn btn-warning basic-button">Yes, delete it all</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form action="/" method="get">
+                <button type="submit" class="btn btn-primary basic-button">No, take me back</button>
+            </form>
+        </div>
+    </div>
 </div>
