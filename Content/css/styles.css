@@ -1,0 +1,26 @@
+#nav-header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: #CCC;
+    background: #333;
+    padding: 8px;
+}
+
+.search-box {
+    display: inline-block;
+    right: 0px;
+    width: 250px;
+}
+
+.search-field {
+    display: inline-block;
+    width: 50px;
+    margin-top: 2px;
+}
+
+.search-label {
+    display: inline-block;
+    width: 130px;
+}
