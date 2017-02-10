@@ -16,6 +16,7 @@ namespace AddressBook.Objects
         private string _name;
         private int _phoneNumber;
         private Address _address;
+        private int _id;
         private static int _idCounter = 1;
 
         public void SetName(string newName)
@@ -27,20 +28,20 @@ namespace AddressBook.Objects
             return _name;
         }
 
-        public void SetPhoneNumber(string newPhoneNumber)
+        public void SetPhoneNumber(int newPhoneNumber)
         {
             _phoneNumber = newPhoneNumber;
         }
-        public string GetPhoneNumber()
+        public int GetPhoneNumber()
         {
             return _phoneNumber;
         }
 
-        public void SetAddress(string newAddress)
+        public void SetAddress(Address newAddress)
         {
             _address = newAddress;
         }
-        public string GetAddress()
+        public Address GetAddress()
         {
             return _address;
         }

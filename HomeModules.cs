@@ -1,4 +1,4 @@
-using Nancy
+using Nancy;
 
 namespace AddressBook
 {
