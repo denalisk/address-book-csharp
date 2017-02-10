@@ -16,5 +16,32 @@ namespace AddressBook.Objects
         private string _name;
         private int _phoneNumber;
         private Address _address;
+
+        public void SetName(string newName)
+        {
+            _name = newName;
+        }
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public void SetPhoneNumber(string newPhoneNumber)
+        {
+            _phoneNumber = newPhoneNumber;
+        }
+        public string GetPhoneNumber()
+        {
+            return _phoneNumber;
+        }
+
+        public void SetAddress(string newAddress)
+        {
+            _address = newAddress;
+        }
+        public string GetAddress()
+        {
+            return _address;
+        }
     }
 }
