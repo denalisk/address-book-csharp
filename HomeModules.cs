@@ -16,7 +16,12 @@ namespace AddressBook
         {
             return View["forms.cshtml"];
         };
-        Post["/new"] = _ =>
+        Get["/contact/{id}"] = parameter =>
+        {
+            Contact selectedContact = Book.GetContact(parameter.id);
+            return View["contact.cshtml", selectedContact];
+        };
+        Post["contact/new"] = _ =>
         {
             string newName = Request.Form["new-name"];
             string newPhoneNumber = Request.Form["new-phone-number"];
