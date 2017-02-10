@@ -33,7 +33,7 @@ namespace AddressBook
         {
             Contact selectedContact = Book.GetContact(parameter.id);
             Book.DeleteContact(selectedContact);
-            return View["contact.cshtml", Book.GetContactList()];
+            return View["contact-list.cshtml", Book.GetContactList()];
         };
         Post["contact/new"] = _ =>
         {
