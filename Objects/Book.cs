@@ -5,12 +5,12 @@ namespace AddressBook.Objects
     public class Book
     {
         private static List<Contact> _contactList = new List<Contact> {};
-        private static Dictionary<string, Contact> _contactDictionary = new Dictionary<string, Contact>() {};
+        private static Dictionary<int, Contact> _contactDictionary = new Dictionary<int, Contact>() {};
 
         public static void SaveContact(Contact newContact)
         {
             _contactList.Add(newContact);
-            _contactDictionary[newContact.GetName()] = newContact;
+            _contactDictionary[newContact.GetId()] = newContact;
         }
         public static bool DeleteContact(Contact newContact)
         {
@@ -30,7 +30,11 @@ namespace AddressBook.Objects
                 _contactDictionary.Remove(newContact.GetId());
                 success_dictionary = true;
             }
-            return (success_dictionary && success_list)
+            return (success_dictionary && success_list);
+        }
+        public static Contact GetContact(int contactId)
+        {
+            return _contactDictionary[contactId];
         }
 
     }
