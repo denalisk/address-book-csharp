@@ -1,6 +1,6 @@
 using Nancy
 
-namespace MyApp
+namespace AddressBook
 {
   public class HomeModule : NancyModule
   {
