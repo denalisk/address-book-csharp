@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace AddressBook.Objects
 {
@@ -6,6 +7,20 @@ namespace AddressBook.Objects
     {
         private static List<Contact> _contactList = new List<Contact> {};
         private static Dictionary<int, Contact> _contactDictionary = new Dictionary<int, Contact>() {};
+
+        public static List<Contact> NameSearch(string query)
+        {
+            List<Contact> results = new List<Contact> {};
+            for (int index = 0; index < _contactList.Count; index++)
+            {
+                if (_contactList[index].GetName().ToLower().Contains(query.ToLower()))
+                {
+                    results.Add(_contactList[index]);
+                }
+            }
+            results.Sort((x, y) => x.GetName().CompareTo(y.GetName()));
+            return results;
+        }
 
         public static void SaveContact(Contact newContact)
         {

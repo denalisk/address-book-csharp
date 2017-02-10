@@ -1,9 +1,9 @@
 <div id="nav-header">
     <a href="/"><button class="btn btn-primary">Home</button></a>
-    <form class="search-box" action="/search" method="get">
+    <form class="search-box" action="/search" method="post">
         <div class="form-group search-holder">
-            <label class="search-label" for="search-text"><button type="submit" class="btn btn-info">Search Contacts</button></label>
-            <input class="form-control search-field" type="text" placeholder="...">
+            <label class="search-label" for="query"><button type="submit" class="btn btn-info">Search Contacts</button></label>
+            <input class="form-control search-field" name="query" id="query" type="text" placeholder="search by name...">
         </div>
     </form>
 </div>

@@ -1,5 +1,7 @@
 using Nancy;
 using AddressBook.Objects;
+using System.Collections.Generic;
+using System;
 
 namespace AddressBook
 {
@@ -23,6 +25,12 @@ namespace AddressBook
         Get["/clear"] = _ =>
         {
             return View["clear.cshtml"];
+        };
+        Post["/search"] = _ =>
+        {
+            string query = Request.Form["query"];
+            List<Contact> result = Book.NameSearch(query);
+            return View["search-results.cshtml", result];
         };
         Post["/contacts/clear"] = _ =>
         {
