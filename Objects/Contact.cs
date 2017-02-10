@@ -16,6 +16,7 @@ namespace AddressBook.Objects
         private string _name;
         private int _phoneNumber;
         private Address _address;
+        private static int _idCounter = 1;
 
         public void SetName(string newName)
         {
