@@ -16,15 +16,16 @@ namespace AddressBook
         {
             return View["forms.cshtml"];
         };
-        Post["/new-contact"] = _ =>
+        Post["/new"] = _ =>
         {
             string newName = Request.Form["new-name"];
-            int newPhoneNumber = Request.Form["new-phone-number"];
+            string newPhoneNumber = Request.Form["new-phone-number"];
             string newStreetAddress = Request.Form["new-street-address"];
             string newCity = Request.Form["new-city"];
             string newState = Request.Form["new-state"];
+            string newEmail = Request.Form["new-email"];
             Address newAddress = new Address(newStreetAddress, newCity, newState);
-            Contact newContact = new Contact(newName, newPhoneNumber, newAddress);
+            Contact newContact = new Contact(newName, newPhoneNumber, newAddress, newEmail);
             Book.SaveContact(newContact);
             return View["contact.cshtml", newContact];
         };

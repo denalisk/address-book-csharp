@@ -4,7 +4,7 @@ namespace AddressBook.Objects
 {
     public class Contact
     {
-        public Contact(string newName, int newPhoneNumber, Address newAddress, string newEmail)
+        public Contact(string newName, string newPhoneNumber, Address newAddress, string newEmail)
         {
             _name = newName;
             _phoneNumber = newPhoneNumber;
@@ -15,8 +15,9 @@ namespace AddressBook.Objects
         }
 
         private string _name;
-        private int _phoneNumber;
+        private string _phoneNumber;
         private Address _address;
+        private string _email;
         private int _id;
         private static int _idCounter = 1;
 
@@ -29,11 +30,11 @@ namespace AddressBook.Objects
             return _name;
         }
 
-        public void SetPhoneNumber(int newPhoneNumber)
+        public void SetPhoneNumber(string newPhoneNumber)
         {
             _phoneNumber = newPhoneNumber;
         }
-        public int GetPhoneNumber()
+        public string GetPhoneNumber()
         {
             return _phoneNumber;
         }
