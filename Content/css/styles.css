@@ -25,16 +25,30 @@
     background: #333;
 }
 
+.contact-div {
+    margin-top: 10px;
+}
+
 .contact-div-main {
+    min-height: 150px;
+}
+
+.contact-form {
+    margin-top: 15px;
 }
 
 .contact-name {
     width: 50%;
-
 }
 
 .delete-button {
     margin-top: 20px;
+}
+
+h3.inline-text {
+    color: blue;
+
+    display: inline;
 }
 
 .search-box {
@@ -62,5 +76,5 @@
 }
 
 div.topper {
-    height: 60px;
+    height: 70px;
 }
