@@ -32,7 +32,7 @@ namespace AddressBook
             Address newAddress = new Address(newStreetAddress, newCity, newState);
             Contact newContact = new Contact(newName, newPhoneNumber, newAddress, newEmail);
             Book.SaveContact(newContact);
-            return View["contact.cshtml", newContact];
+            return View["contact-list.cshtml", Book.GetContactList()];
         };
       // GETs and POSTs go HERE = _ =>
     }

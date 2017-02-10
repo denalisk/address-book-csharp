@@ -37,5 +37,20 @@ namespace AddressBook.Objects
             return _contactDictionary[contactId];
         }
 
+        public static List<Contact> GetContactList()
+        {
+            return _contactList;
+        }
+        public static Dictionary<int, Contact> GetContactDictionary()
+        {
+            return _contactDictionary;
+        }
+        public static void ClearContacts()
+        {
+            _contactDictionary.Clear();
+            _contactDictionary.Clear();
+        }
+
+
     }
 }
