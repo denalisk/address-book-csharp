@@ -45,5 +45,14 @@ namespace AddressBook.Objects
         {
             return _address;
         }
+
+        public void SetId(int newId)
+        {
+            _id = newId;
+        }
+        public int GetId()
+        {
+            return _id;
+        }
     }
 }
