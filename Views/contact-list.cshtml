@@ -1,25 +1,33 @@
 @{
     Layout="Shared/_Layout.cshtml";
 }
-
-@if (Model.Count == 0)
-{
-    <div class="empty-list">
-        <h1>There's nothing in your list</h1>
+<div class="button-header">
+    <div class="button-holder">
+        <a href="/add"><button class="btn btn-success basic-button">Create a New Contact</button></a>
+        <a href="/clear"><button class="btn btn-danger basic-button">Clear Existing Contacts</button></a>
     </div>
-}
-else
-{
-    @foreach (var contact in Model)
+</div>
+<div class="row">
+    @if (Model.Count == 0)
     {
-        <div class="contact-div well">
-        <a href="/contact/@contact.GetId()"><h1>@contact.GetName()</h1></a>
-        <form action="/delete/@contact.GetId()" method="post">
-            <button type="submit" class="btn btn-danger">Delete Contact</button>
-        </form>
+        <div class="empty-list">
+            <h1>There's nothing in your list</h1>
         </div>
     }
-}
-
-<a href="/add"><button class="btn btn-success">Create a New Contact</button></a>
-<a href="/clear"><button class="btn btn-danger">Clear Existing Contacts</button></a>
+    else
+    {
+        @foreach (var contact in Model)
+        {
+            <div class="contact-div-main well col-sm-4">
+            <div class="contact-name col-md-7">
+                <a href="/contact/@contact.GetId()"><h1>@contact.GetName()</h1></a>
+            </div>
+            <div class="col-md-5">
+                <form class="delete-button-holder" action="/delete/@contact.GetId()" method="post">
+                    <button type="submit" class="btn btn-danger delete-button">Delete Contact</button>
+                </form>
+            </div>
+            </div>
+        }
+    }
+</div>

@@ -6,21 +6,61 @@
     color: #CCC;
     background: #333;
     padding: 8px;
+    height: 60px;
+    z-index: 1;
+}
+
+.basic-button {
+    margin: 15px;
+    width: 190px;
+}
+
+.button-holder {
+    position: fixed;
+    left: -5px;
+    bottom: 0px;
+    z-index: 1;
+    width: 100%;
+    color: #CCC;
+    background: #333;
+}
+
+.contact-div-main {
+}
+
+.contact-name {
+    width: 50%;
+
+}
+
+.delete-button {
+    margin-top: 20px;
 }
 
 .search-box {
     display: inline-block;
     right: 0px;
-    width: 250px;
+    width: 350px;
 }
 
 .search-field {
     display: inline-block;
-    width: 50px;
+    width: 200px;
     margin-top: 2px;
 }
 
 .search-label {
     display: inline-block;
     width: 130px;
+}
+
+.search-holder {
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+div.topper {
+    height: 60px;
 }

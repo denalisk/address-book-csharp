@@ -31,8 +31,11 @@ namespace AddressBook
         };
         Post["/delete/{id}"] = parameter =>
         {
-            Contact selectedContact = Book.GetContact(parameter.id);
-            Book.DeleteContact(selectedContact);
+            if (Book.GetContactDictionary().ContainsKey(parameter.id))
+            {
+                Contact selectedContact = Book.GetContact(parameter.id);
+                Book.DeleteContact(selectedContact);
+            }
             return View["contact-list.cshtml", Book.GetContactList()];
         };
         Post["contact/new"] = _ =>
