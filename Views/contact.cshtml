@@ -1,0 +1,14 @@
+@{
+    Layout="Shared/_Layout.cshtml";
+}
+
+<div class="contact-div well">
+    <h1>@Model.GetName()</h1>
+    <p>@Model.GetAddress().GetStreetAddress()</p>
+    <p>@Model.GetAddress().GetCity(), @Model.GetAddress().GetState()</p>
+    <ul>
+        <li>Phone: @Model.GetPhoneNumber()</li>
+        <li>Email: @Model.GetEmail()</li>
+        <li></li>
+    </ul>
+</div>
