@@ -2,17 +2,23 @@
     Layout="Shared/_Layout.cshtml";
 }
 
-@foreach (var contact in Model)
+@if (Model.Count == 0)
 {
-    <div class="contact-div well">
-        <a href="/contact/@contact.GetId()"><h1>@contact.GetName()</h1></a>
-        <p>@contact.GetAddress().GetStreetAddress()</p>
-        <p>@contact.GetAddress().GetCity(), @contact.GetAddress().GetState()</p>
-        <ul>
-            <li>Phone: @contact.GetPhoneNumber()</li>
-            <li>Email: @contact.GetEmail()</li>
-        </ul>
+    <div class="empty-list">
+        <h1>There's nothing in your list</h1>
     </div>
+}
+else
+{
+    @foreach (var contact in Model)
+    {
+        <div class="contact-div well">
+        <a href="/contact/@contact.GetId()"><h1>@contact.GetName()</h1></a>
+        <form action="/delete/@contact.GetId()" method="post">
+            <button type="submit" class="btn btn-danger">Delete Contact</button>
+        </form>
+        </div>
+    }
 }
 
 <a href="/add"><button class="btn btn-success">Create a New Contact</button></a>

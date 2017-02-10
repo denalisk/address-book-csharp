@@ -29,6 +29,12 @@ namespace AddressBook
             Book.ClearContacts();
             return View["contact-list.cshtml", Book.GetContactList()];
         };
+        Post["/delete/{id}"] = parameter =>
+        {
+            Contact selectedContact = Book.GetContact(parameter.id);
+            Book.DeleteContact(selectedContact);
+            return View["contact.cshtml", Book.GetContactList()];
+        };
         Post["contact/new"] = _ =>
         {
             string newName = Request.Form["new-name"];

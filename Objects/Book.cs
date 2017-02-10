@@ -10,6 +10,7 @@ namespace AddressBook.Objects
         public static void SaveContact(Contact newContact)
         {
             _contactList.Add(newContact);
+            _contactList.Sort((x, y) => x.GetName().CompareTo(y.GetName()));
             _contactDictionary[newContact.GetId()] = newContact;
         }
         public static bool DeleteContact(Contact newContact)
@@ -48,7 +49,7 @@ namespace AddressBook.Objects
         public static void ClearContacts()
         {
             _contactDictionary.Clear();
-            _contactDictionary.Clear();
+            _contactList.Clear();
         }
 
 
