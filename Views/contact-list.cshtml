@@ -1,0 +1,16 @@
+@{
+    Layout="Shared/_Layout.cshtml";
+}
+
+@foreach (var contact in Model)
+{
+    <div class="contact-div well">
+        <a href="/contact/@contact.GetId()"><h1>@contact.GetName()</h1></a>
+        <p>@contact.GetAddress().GetStreetAddress()</p>
+        <p>@contact.GetAddress().GetCity(), @contact.GetAddress().GetState()</p>
+        <ul>
+            <li>Phone: @contact.GetPhoneNumber()</li>
+            <li>Email: @contact.GetEmail()</li>
+        </ul>
+    </div>
+}
