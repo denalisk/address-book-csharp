@@ -4,11 +4,12 @@ namespace AddressBook.Objects
 {
     public class Contact
     {
-        public Contact(string newName, int newPhoneNumber, Address newAddress)
+        public Contact(string newName, int newPhoneNumber, Address newAddress, string newEmail)
         {
             _name = newName;
             _phoneNumber = newPhoneNumber;
             _address = newAddress;
+            _email = newEmail;
             _id = _idCounter;
             _idCounter++;
         }
@@ -44,6 +45,15 @@ namespace AddressBook.Objects
         public Address GetAddress()
         {
             return _address;
+        }
+
+        public void SetEmail(string newEmail)
+        {
+            _email = newEmail;
+        }
+        public string GetEmail()
+        {
+            return _email;
         }
 
         public void SetId(int newId)
