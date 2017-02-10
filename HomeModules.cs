@@ -9,9 +9,8 @@ namespace AddressBook
     {
         Get["/"] = _ =>
         {
-            return View["index.cshtml"];
+            return View["contact-list.cshtml", Book.GetContactList()];
         };
-
         Get["/add"] = _ =>
         {
             return View["forms.cshtml"];
@@ -20,6 +19,15 @@ namespace AddressBook
         {
             Contact selectedContact = Book.GetContact(parameter.id);
             return View["contact.cshtml", selectedContact];
+        };
+        Get["/clear"] = _ =>
+        {
+            return View["clear.cshtml"];
+        };
+        Post["/contacts/clear"] = _ =>
+        {
+            Book.ClearContacts();
+            return View["contact-list.cshtml", Book.GetContactList()];
         };
         Post["contact/new"] = _ =>
         {
@@ -32,8 +40,9 @@ namespace AddressBook
             Address newAddress = new Address(newStreetAddress, newCity, newState);
             Contact newContact = new Contact(newName, newPhoneNumber, newAddress, newEmail);
             Book.SaveContact(newContact);
-            return View["contact-list.cshtml", Book.GetContactList()];
+            return View["contact-new.cshtml", newContact];
         };
+
       // GETs and POSTs go HERE = _ =>
     }
   }
